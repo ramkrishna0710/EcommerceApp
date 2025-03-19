@@ -6,6 +6,7 @@ import { Colors } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 import Google from '@/assets/images/google-logo.svg'
 import Animated, { FadeInDown, FadeInRight } from "react-native-reanimated";
+import SocialLogInButton from "@/components/SocialLogIn";
 
 type Props = {};
 
@@ -29,41 +30,8 @@ const WelcomeScreen = (props: Props) => {
               <Animated.Text style={styles.title} entering={FadeInRight.delay(300).duration(300)}>ShopX</Animated.Text>
               <Animated.Text style={styles.description} entering={FadeInRight.delay(500).duration(300)}>One Stop Solution for All Your Needs.</Animated.Text>
 
-              {/* Continue with Email button */}
-              <View style={styles.socialLoginWrapper}>
-                <Animated.View entering={FadeInDown.delay(300).duration(500).springify()}>
-                  <Link href={"/signup"} asChild>
-                    <TouchableOpacity style={styles.button}>
-                      <Ionicons
-                        name="mail-outline" size={20} color={Colors.black}
-                      />
-                      <Text style={styles.btnText}>Continue with Email</Text>
-                    </TouchableOpacity>
-                  </Link>
-                </Animated.View>
-              </View>
-              {/* Continue with google button */}
-              <View style={styles.socialLoginWrapper}>
-                <Animated.View entering={FadeInDown.delay(700).duration(500).springify()}>
-                  <TouchableOpacity style={styles.button}>
-                    <Google
-                      width={20} height={20}
-                    />
-                    <Text style={styles.btnText}>Continue with Google</Text>
-                  </TouchableOpacity>
-                </Animated.View>
-              </View>
-              {/* Continue with apple button */}
-              <View style={styles.socialLoginWrapper}>
-                <Animated.View entering={FadeInDown.delay(1100).duration(500).springify()}>
-                  <TouchableOpacity style={styles.button}>
-                    <Ionicons
-                      name="logo-apple" size={20} color={Colors.black}
-                    />
-                    <Text style={styles.btnText}>Continue with Apple</Text>
-                  </TouchableOpacity>
-                </Animated.View>
-              </View>
+              <SocialLogInButton emailHref={'/signup'}/>
+              
               <View style={styles.loginContainer}>
                 <Text style={styles.loginTxt}>Already Have an account?{" "}</Text>
                 <Link href={"/signin"} asChild>

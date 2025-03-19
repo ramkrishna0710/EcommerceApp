@@ -4,6 +4,7 @@ import { Link, router, Stack } from 'expo-router'
 import { Colors } from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
 import InputField from '@/components/InputField'
+import SocialLogInButton from '@/components/SocialLogIn'
 
 type Props = {}
 
@@ -47,7 +48,10 @@ const SignUpScreen = (props: Props) => {
             </TouchableOpacity>
           </Link>
         </View>
+
         <View style={styles.divider}/>
+
+        <SocialLogInButton emailHref={'/signin'}/>
       </View>
     </>
   )
